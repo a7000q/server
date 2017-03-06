@@ -54,7 +54,7 @@ class ObjectProductPrices extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdObject()
+    public function getObject()
     {
         return $this->hasOne(Objects::className(), ['id' => 'id_object']);
     }
@@ -62,7 +62,7 @@ class ObjectProductPrices extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdProduct()
+    public function getProduct()
     {
         return $this->hasOne(Products::className(), ['id' => 'id_product']);
     }
