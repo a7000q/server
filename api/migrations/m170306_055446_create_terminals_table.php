@@ -17,7 +17,7 @@ class m170306_055446_create_terminals_table extends Migration
             'id_object' => $this->integer(),
             'name' => $this->string(),
             'token' => $this->string(),
-            'date' => $this->integer()->notNull()->defaultValue($this->timestamp()),
+            'date' => $this->integer()->notNull()->defaultValue(0)
         ]);
 
         $this->createIndex("idx-terminals-id_object", "terminals", "id_object");
