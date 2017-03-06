@@ -11,7 +11,7 @@ class m170306_061355_add_triger_before_insert_terminal extends Migration
            CREATE TRIGGER `insert_terminals` BEFORE INSERT ON `terminals`
                 FOR EACH ROW
                 BEGIN
-                    SET NEW.token = MD5(NEW.name + NEW.id_object);
+                    SET NEW.token = MD5(NEW.id_object+UNIX_TIMESTAMP());
                 END;
         ';
 
