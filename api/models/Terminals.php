@@ -54,7 +54,7 @@ class Terminals extends \yii\db\ActiveRecord implements IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIdObject()
+    public function getObject()
     {
         return $this->hasOne(Objects::className(), ['id' => 'id_object']);
     }
