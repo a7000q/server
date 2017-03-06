@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use yii\web\IdentityInterface;
 /**
  * This is the model class for table "terminals".
  *
@@ -15,7 +15,7 @@ use Yii;
  *
  * @property Objects $idObject
  */
-class Terminals extends \yii\db\ActiveRecord
+class Terminals extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**
      * @inheritdoc

@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-use yii\web\IdentityInterface;
+
 
 /**
  * This is the model class for table "products".
@@ -14,7 +14,7 @@ use yii\web\IdentityInterface;
  *
  * @property ObjectProductPrices[] $objectProductPrices
  */
-class Products extends \yii\db\ActiveRecord implements IdentityInterface
+class Products extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
