@@ -1,9 +1,7 @@
 <?php
 namespace app\controllers;
 
-use yii\rest\ActiveController;
-
-class ProductsController extends ActiveController
+class ProductsController extends CController
 {
     public $modelClass = 'app\models\Products';
 }
