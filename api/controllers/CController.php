@@ -2,9 +2,11 @@
 
 namespace app\controllers;
 
+use app\models\Terminals;
 use yii\rest\ActiveController;
 use yii\web\Response;
 use yii\filters\auth\QueryParamAuth;
+use Yii;
 
 class CController extends ActiveController
 {
@@ -43,5 +45,13 @@ class CController extends ActiveController
         }
 
         return $result;
+    }
+
+    /**
+     * @return Terminals
+     */
+    protected function getTerminal()
+    {
+        return Yii::$app->user->identity;
     }
 }

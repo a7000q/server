@@ -120,4 +120,18 @@ class Terminals extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return "";
     }
+
+
+    //***************************************Логика и методы*********************//
+
+
+    //*Получить все доступные продукты для терминала c ценами
+    public function getProducts()
+    {
+        $products = $this->object->objectProductPrices;
+        foreach ($products as $k => $product)
+            $products[$k]->price = $product->gPrice;
+
+        return $products;
+    }
 }

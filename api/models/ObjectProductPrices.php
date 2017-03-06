@@ -66,4 +66,12 @@ class ObjectProductPrices extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Products::className(), ['id' => 'id_product']);
     }
+
+    public function getGPrice()
+    {
+        if ($this->price)
+            return $this->price;
+
+        return $this->product->price;
+    }
 }
