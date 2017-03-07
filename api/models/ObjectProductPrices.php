@@ -25,6 +25,11 @@ class ObjectProductPrices extends \yii\db\ActiveRecord
         return 'object_product_prices';
     }
 
+    public function extraFields()
+    {
+        return ['product'];
+    }
+
     /**
      * @inheritdoc
      */
