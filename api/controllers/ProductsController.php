@@ -2,7 +2,7 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\ObjectProductPrices;
+use yii\data\ArrayDataProvider;
 
 class ProductsController extends CController
 {
@@ -21,6 +21,6 @@ class ProductsController extends CController
     {
         $terminal = $this->getTerminal();
 
-        return $terminal->products;
+        return new ArrayDataProvider(['allModels' => $terminal->products]);
     }
 }
