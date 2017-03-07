@@ -2,10 +2,11 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\ObjectProductPrices;
 
 class ProductsController extends CController
 {
-    public $modelClass = 'app\models\Products';
+    public $modelClass = 'app\models\ObjectProductPrices';
 
     public function actions()
     {
