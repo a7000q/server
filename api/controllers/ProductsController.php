@@ -21,6 +21,6 @@ class ProductsController extends CController
     {
         $terminal = $this->getTerminal();
 
-        return $terminal->getProducts();
+        return $terminal->products;
     }
 }
