@@ -100,7 +100,7 @@ class Sales extends \yii\db\ActiveRecord
         $sale = Sales::find()->where(['date' => $date])
             ->andWhere(['id_object' => $id_object])
             ->andWhere(['id_product' => $id_product])
-            ->andWhere(['volum2e' => $volume])
+            ->andWhere(['volume' => $volume])
             ->one();
 
         if ($sale)
