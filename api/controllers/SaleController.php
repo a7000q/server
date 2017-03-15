@@ -21,18 +21,7 @@ class SaleController extends CController
     public function actionAddCash($date, $id_product, $volume, $price, $bill_sum)
     {
         $terminal = $this->getTerminal();
-        $sale = new Sales([
-            'date' => $date,
-            'id_object' => $terminal->id_object,
-            'id_product' => $id_product,
-            'id_pay' => 1,
-            'volume' => $volume,
-            'price' => $price
-        ]);
-
-        $sale->save();
-
-        $sale->addSalesCash($bill_sum);
+        $sale = Sales::addSaleCash($date, $terminal->id_object, $id_product, $volume, $price, $bill_sum);
 
         return $sale;
     }

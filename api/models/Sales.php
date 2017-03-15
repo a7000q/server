@@ -94,4 +94,27 @@ class Sales extends \yii\db\ActiveRecord
 
         $cash->save();
     }
+
+    static public function addSaleCash($date, $id_object, $id_product, $volume, $price, $bill_sum)
+    {
+        $sale = Sales::find()->where(['date' => $date, 'id_object' => $id_object, 'id_product' => $id_product, 'volume' => $volume])->one();
+
+        if ($sale)
+            return $sale;
+
+        $sale = new Sales([
+            'date' => $date,
+            'id_object' => $id_object,
+            'id_product' => $id_product,
+            'id_pay' => 1,
+            'volume' => $volume,
+            'price' => $price
+        ]);
+
+        $sale->save();
+
+        $sale->addSalesCash($bill_sum);
+
+        return $sale;
+    }
 }
