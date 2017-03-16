@@ -71,4 +71,9 @@ class Partners extends \yii\db\ActiveRecord
     {
         return $this->hasMany(PartnerInpayments::className(), ['id_partner' => 'id']);
     }
+
+    public function getBalance()
+    {
+        return $this->debit - $this->kredit;
+    }
 }
