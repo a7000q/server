@@ -29,6 +29,8 @@ class SaleController extends CController
     public function actionAddCard($date, $id_product, $volume, $price, $id_card)
     {
         $terminal = $this->getTerminal();
+        $sale = Sales::addSaleCard($date, $terminal->id_object, $id_product, $volume, $price, $id_card);
 
+        return $sale;
     }
 }
