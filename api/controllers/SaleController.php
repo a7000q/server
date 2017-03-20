@@ -25,4 +25,10 @@ class SaleController extends CController
 
         return $sale;
     }
+
+    public function actionAddCard($date, $id_product, $volume, $price, $id_card)
+    {
+        $terminal = $this->getTerminal();
+
+    }
 }
